@@ -219,8 +219,9 @@ class Boid {
 
   void render() {
     // Draw a triangle rotated in the direction of this.this.vel
-    float theta = this.vel.heading2D();
-    theta = map(theta, -PI, PI, PI/2, -PI/2);
+    // theta is modified to make butterflies fly in a more realistic way
+    float theta = this.vel.heading() + PI/2;
+    //theta = map(theta, -PI, PI, PI/2, -PI/2);
     // heading2D() above is now heading() but leaving old syntax until Processing.js catches up
 
     fill(200, 100);
