@@ -182,11 +182,19 @@ class Boid {
 
   void checkAniState(boolean atText, boolean inContour) {
     color displayClr = this.plainClr;
+    // inContour not atText, display oriClr
     if (inContour && !atText) {
       displayClr = this.oriClr;
-    } else if (atText && !inContour) {
-      displayClr = this.plainClr;
+    } 
+    if (atText && !inContour) {
+      // if not inspired, atText display plainClr
+      if (this.inspired) {
+        displayClr = this.oriClr;
+      } else {
+        displayClr = this.plainClr;
+      }
     }
+
     if (this.currAniState == 1) {
       //insideC
       butterflyL.display(0, 0, this.size, displayClr);

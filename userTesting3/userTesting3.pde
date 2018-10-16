@@ -89,7 +89,7 @@ void setup() {
   butterflyR = new Animation("right_", 40);
   // Add an initial set of boids into the system
   for (int i = 0; i < 41; i++) {
-    color clr = color(random(255), random(255), random(255), 255);
+    color clr = color(random(100, 255), random(100, 255), random(100, 255), 255);
     if (random(1)<0.25) {
       flock.addBoid(new Boid(random(-width*(frameOfst), 0), random(0, height), random(0.5, 1.5), clr));
     } else if (random(1)<0.5) {
