@@ -1,0 +1,864 @@
+sprite_sheet "butterfly" 512 x 512 margin 1 order "height"
+
+img "butterfly.xcf.bz2"
+
+/* white */
+"pattern 1" image_size * 0.25 with img
+  "body"
+  "pattern 1"
+  "wing 1"
+;
+
+"pattern 2" image_size * 0.25 with img
+  "body"
+  "pattern 2"
+  "wing 2"
+;
+
+"pattern 3" image_size * 0.25 with img
+  "body"
+  "wing 3"
+;
+
+"bicolor pattern 1" image_size * 0.25 with img
+  "body"
+  "bicolor"
+  "pattern 1"
+  "wing 1"
+;
+
+"bicolor pattern 2" image_size * 0.25 with img
+  "body"
+  "bicolor"
+  "pattern 2"
+  "wing 2"
+;
+
+"bicolor pattern 3" image_size * 0.25 with img
+  "body"
+  "bicolor"
+  "wing 3"
+;
+
+"bicolor 2 pattern 1" image_size * 0.25 with img
+  "body"
+  "tricolor"
+  "pattern 1"
+  "wing 1"
+;
+
+"bicolor 2 pattern 2" image_size * 0.25 with img
+  "body"
+  "tricolor"
+  "pattern 2"
+  "wing 2"
+;
+
+"bicolor 2 pattern 3" image_size * 0.25 with img
+  "body"
+  "tricolor"
+  "wing 3"
+;
+
+"tricolor pattern 1" image_size * 0.25 with img
+  "body"
+  "bicolor"
+  "tricolor"
+  "pattern 1"
+  "wing 1"
+;
+
+"tricolor pattern 2" image_size * 0.25 with img
+  "body"
+  "bicolor"
+  "tricolor"
+  "pattern 2"
+  "wing 2"
+;
+
+"tricolor pattern 3" image_size * 0.25 with img
+  "body"
+  "bicolor"
+  "tricolor"
+  "wing 3"
+;
+
+"monochrome 1" image_size * 0.25 with img
+  "body"
+  "wing 1"
+;
+
+"monochrome 2" image_size * 0.25 with img
+  "body"
+  "wing 2"
+;
+
+"monochrome 3" image_size * 0.25 with img
+  "body"
+  "wing 3"
+;
+
+"bicolor 1" image_size * 0.25 with img
+  "body"
+  "bicolor"
+  "wing 1"
+;
+
+"bicolor 2" image_size * 0.25 with img
+  "body"
+  "bicolor"
+  "wing 2"
+;
+
+"bicolor 3" image_size * 0.25 with img
+  "body"
+  "bicolor"
+  "wing 3"
+;
+
+"bicolor 2 1" image_size * 0.25 with img
+  "body"
+  "tricolor"
+  "wing 1"
+;
+
+"bicolor 2 2" image_size * 0.25 with img
+  "body"
+  "tricolor"
+  "wing 2"
+;
+
+"bicolor 2 3" image_size * 0.25 with img
+  "body"
+  "tricolor"
+  "wing 3"
+;
+
+"tricolor 1" image_size * 0.25 with img
+  "body"
+  "bicolor"
+  "tricolor"
+  "wing 1"
+;
+
+"tricolor 2" image_size * 0.25 with img
+  "body"
+  "bicolor"
+  "tricolor"
+  "wing 2"
+;
+
+"tricolor 3" image_size * 0.25 with img
+  "body"
+  "bicolor"
+  "tricolor"
+  "wing 3"
+;
+
+/* blue */
+"blue pattern 1" image_size * 0.25 with img
+  "body"
+  "blue"
+  "pattern 1"
+  "wing 1"
+;
+
+"blue pattern 2" image_size * 0.25 with img
+  "body"
+  "blue"
+  "pattern 2"
+  "wing 2"
+;
+
+"blue pattern 3" image_size * 0.25 with img
+  "body"
+  "blue"
+  "wing 3"
+;
+
+"blue bicolor pattern 1" image_size * 0.25 with img
+  "body"
+  "blue"
+  "bicolor"
+  "pattern 1"
+  "wing 1"
+;
+
+"blue bicolor pattern 2" image_size * 0.25 with img
+  "body"
+  "blue"
+  "bicolor"
+  "pattern 2"
+  "wing 2"
+;
+
+"blue bicolor pattern 3" image_size * 0.25 with img
+  "body"
+  "blue"
+  "bicolor"
+  "wing 3"
+;
+
+"blue bicolor 2 pattern 1" image_size * 0.25 with img
+  "body"
+  "blue"
+  "tricolor"
+  "pattern 1"
+  "wing 1"
+;
+
+"blue bicolor 2 pattern 2" image_size * 0.25 with img
+  "body"
+  "blue"
+  "tricolor"
+  "pattern 2"
+  "wing 2"
+;
+
+"blue bicolor 2 pattern 3" image_size * 0.25 with img
+  "body"
+  "blue"
+  "tricolor"
+  "wing 3"
+;
+
+"blue tricolor pattern 1" image_size * 0.25 with img
+  "body"
+  "blue"
+  "bicolor"
+  "tricolor"
+  "pattern 1"
+  "wing 1"
+;
+
+"blue tricolor pattern 2" image_size * 0.25 with img
+  "body"
+  "blue"
+  "bicolor"
+  "tricolor"
+  "pattern 2"
+  "wing 2"
+;
+
+"blue tricolor pattern 3" image_size * 0.25 with img
+  "body"
+  "blue"
+  "bicolor"
+  "tricolor"
+  "wing 3"
+;
+
+"blue monochrome 1" image_size * 0.25 with img
+  "body"
+  "blue"
+  "wing 1"
+;
+
+"blue monochrome 2" image_size * 0.25 with img
+  "body"
+  "blue"
+  "wing 2"
+;
+
+"blue monochrome 3" image_size * 0.25 with img
+  "body"
+  "blue"
+  "wing 3"
+;
+
+"blue bicolor 1" image_size * 0.25 with img
+  "body"
+  "blue"
+  "bicolor"
+  "wing 1"
+;
+
+"blue bicolor 2" image_size * 0.25 with img
+  "body"
+  "blue"
+  "bicolor"
+  "wing 2"
+;
+
+"blue bicolor 3" image_size * 0.25 with img
+  "body"
+  "blue"
+  "bicolor"
+  "wing 3"
+;
+
+"blue bicolor 2 1" image_size * 0.25 with img
+  "body"
+  "blue"
+  "tricolor"
+  "wing 1"
+;
+
+"blue bicolor 2 2" image_size * 0.25 with img
+  "body"
+  "blue"
+  "tricolor"
+  "wing 2"
+;
+
+"blue bicolor 2 3" image_size * 0.25 with img
+  "body"
+  "blue"
+  "tricolor"
+  "wing 3"
+;
+
+"blue tricolor 1" image_size * 0.25 with img
+  "body"
+  "blue"
+  "bicolor"
+  "tricolor"
+  "wing 1"
+;
+
+"blue tricolor 2" image_size * 0.25 with img
+  "body"
+  "blue"
+  "bicolor"
+  "tricolor"
+  "wing 2"
+;
+
+"blue tricolor 3" image_size * 0.25 with img
+  "body"
+  "blue"
+  "bicolor"
+  "tricolor"
+  "wing 3"
+;
+
+/* yellow */
+"yellow pattern 1" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "pattern 1"
+  "wing 1"
+;
+
+"yellow pattern 2" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "pattern 2"
+  "wing 2"
+;
+
+"yellow pattern 3" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "wing 3"
+;
+
+"yellow bicolor pattern 1" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "bicolor"
+  "pattern 1"
+  "wing 1"
+;
+
+"yellow bicolor pattern 2" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "bicolor"
+  "pattern 2"
+  "wing 2"
+;
+
+"yellow bicolor pattern 3" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "bicolor"
+  "wing 3"
+;
+
+"yellow bicolor 2 pattern 1" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "tricolor"
+  "pattern 1"
+  "wing 1"
+;
+
+"yellow bicolor 2 pattern 2" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "tricolor"
+  "pattern 2"
+  "wing 2"
+;
+
+"yellow bicolor 2 pattern 3" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "tricolor"
+  "wing 3"
+;
+
+"yellow tricolor pattern 1" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "bicolor"
+  "tricolor"
+  "pattern 1"
+  "wing 1"
+;
+
+"yellow tricolor pattern 2" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "bicolor"
+  "tricolor"
+  "pattern 2"
+  "wing 2"
+;
+
+"yellow tricolor pattern 3" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "bicolor"
+  "tricolor"
+  "wing 3"
+;
+
+"yellow monochrome 1" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "wing 1"
+;
+
+"yellow monochrome 2" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "wing 2"
+;
+
+"yellow monochrome 3" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "wing 3"
+;
+
+"yellow bicolor 1" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "bicolor"
+  "wing 1"
+;
+
+"yellow bicolor 2" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "bicolor"
+  "wing 2"
+;
+
+"yellow bicolor 3" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "bicolor"
+  "wing 3"
+;
+
+"yellow bicolor 2 1" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "tricolor"
+  "wing 1"
+;
+
+"yellow bicolor 2 2" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "tricolor"
+  "wing 2"
+;
+
+"yellow bicolor 2 3" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "tricolor"
+  "wing 3"
+;
+
+"yellow tricolor 1" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "bicolor"
+  "tricolor"
+  "wing 1"
+;
+
+"yellow tricolor 2" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "bicolor"
+  "tricolor"
+  "wing 2"
+;
+
+"yellow tricolor 3" image_size * 0.25 with img
+  "body"
+  "yellow"
+  "bicolor"
+  "tricolor"
+  "wing 3"
+;
+
+/* green */
+"green pattern 1" image_size * 0.25 with img
+  "body"
+  "green"
+  "pattern 1"
+  "wing 1"
+;
+
+"green pattern 2" image_size * 0.25 with img
+  "body"
+  "green"
+  "pattern 2"
+  "wing 2"
+;
+
+"green pattern 3" image_size * 0.25 with img
+  "body"
+  "green"
+  "wing 3"
+;
+
+"green bicolor pattern 1" image_size * 0.25 with img
+  "body"
+  "green"
+  "bicolor"
+  "pattern 1"
+  "wing 1"
+;
+
+"green bicolor pattern 2" image_size * 0.25 with img
+  "body"
+  "green"
+  "bicolor"
+  "pattern 2"
+  "wing 2"
+;
+
+"green bicolor pattern 3" image_size * 0.25 with img
+  "body"
+  "green"
+  "bicolor"
+  "wing 3"
+;
+
+"green bicolor 2 pattern 1" image_size * 0.25 with img
+  "body"
+  "green"
+  "tricolor"
+  "pattern 1"
+  "wing 1"
+;
+
+"green bicolor 2 pattern 2" image_size * 0.25 with img
+  "body"
+  "green"
+  "tricolor"
+  "pattern 2"
+  "wing 2"
+;
+
+"green bicolor 2 pattern 3" image_size * 0.25 with img
+  "body"
+  "green"
+  "tricolor"
+  "wing 3"
+;
+
+"green tricolor pattern 1" image_size * 0.25 with img
+  "body"
+  "green"
+  "bicolor"
+  "tricolor"
+  "pattern 1"
+  "wing 1"
+;
+
+"green tricolor pattern 2" image_size * 0.25 with img
+  "body"
+  "green"
+  "bicolor"
+  "tricolor"
+  "pattern 2"
+  "wing 2"
+;
+
+"green tricolor pattern 3" image_size * 0.25 with img
+  "body"
+  "green"
+  "bicolor"
+  "tricolor"
+  "wing 3"
+;
+
+"green monochrome 1" image_size * 0.25 with img
+  "body"
+  "green"
+  "wing 1"
+;
+
+"green monochrome 2" image_size * 0.25 with img
+  "body"
+  "green"
+  "wing 2"
+;
+
+"green monochrome 3" image_size * 0.25 with img
+  "body"
+  "green"
+  "wing 3"
+;
+
+"green bicolor 1" image_size * 0.25 with img
+  "body"
+  "green"
+  "bicolor"
+  "wing 1"
+;
+
+"green bicolor 2" image_size * 0.25 with img
+  "body"
+  "green"
+  "bicolor"
+  "wing 2"
+;
+
+"green bicolor 3" image_size * 0.25 with img
+  "body"
+  "green"
+  "bicolor"
+  "wing 3"
+;
+
+"green bicolor 2 1" image_size * 0.25 with img
+  "body"
+  "green"
+  "tricolor"
+  "wing 1"
+;
+
+"green bicolor 2 2" image_size * 0.25 with img
+  "body"
+  "green"
+  "tricolor"
+  "wing 2"
+;
+
+"green bicolor 2 3" image_size * 0.25 with img
+  "body"
+  "green"
+  "tricolor"
+  "wing 3"
+;
+
+"green tricolor 1" image_size * 0.25 with img
+  "body"
+  "green"
+  "bicolor"
+  "tricolor"
+  "wing 1"
+;
+
+"green tricolor 2" image_size * 0.25 with img
+  "body"
+  "green"
+  "bicolor"
+  "tricolor"
+  "wing 2"
+;
+
+"green tricolor 3" image_size * 0.25 with img
+  "body"
+  "green"
+  "bicolor"
+  "tricolor"
+  "wing 3"
+;
+
+/* red */
+"red pattern 1" image_size * 0.25 with img
+  "body"
+  "red"
+  "pattern 1"
+  "wing 1"
+;
+
+"red pattern 2" image_size * 0.25 with img
+  "body"
+  "red"
+  "pattern 2"
+  "wing 2"
+;
+
+"red pattern 3" image_size * 0.25 with img
+  "body"
+  "red"
+  "wing 3"
+;
+
+"red bicolor pattern 1" image_size * 0.25 with img
+  "body"
+  "red"
+  "bicolor"
+  "pattern 1"
+  "wing 1"
+;
+
+"red bicolor pattern 2" image_size * 0.25 with img
+  "body"
+  "red"
+  "bicolor"
+  "pattern 2"
+  "wing 2"
+;
+
+"red bicolor pattern 3" image_size * 0.25 with img
+  "body"
+  "red"
+  "bicolor"
+  "wing 3"
+;
+
+"red bicolor 2 pattern 1" image_size * 0.25 with img
+  "body"
+  "red"
+  "tricolor"
+  "pattern 1"
+  "wing 1"
+;
+
+"red bicolor 2 pattern 2" image_size * 0.25 with img
+  "body"
+  "red"
+  "tricolor"
+  "pattern 2"
+  "wing 2"
+;
+
+"red bicolor 2 pattern 3" image_size * 0.25 with img
+  "body"
+  "red"
+  "tricolor"
+  "wing 3"
+;
+
+"red tricolor pattern 1" image_size * 0.25 with img
+  "body"
+  "red"
+  "bicolor"
+  "tricolor"
+  "pattern 1"
+  "wing 1"
+;
+
+"red tricolor pattern 2" image_size * 0.25 with img
+  "body"
+  "red"
+  "bicolor"
+  "tricolor"
+  "pattern 2"
+  "wing 2"
+;
+
+"red tricolor pattern 3" image_size * 0.25 with img
+  "body"
+  "red"
+  "bicolor"
+  "tricolor"
+  "wing 3"
+;
+
+"red monochrome 1" image_size * 0.25 with img
+  "body"
+  "red"
+  "wing 1"
+;
+
+"red monochrome 2" image_size * 0.25 with img
+  "body"
+  "red"
+  "wing 2"
+;
+
+"red monochrome 3" image_size * 0.25 with img
+  "body"
+  "red"
+  "wing 3"
+;
+
+"red bicolor 1" image_size * 0.25 with img
+  "body"
+  "red"
+  "bicolor"
+  "wing 1"
+;
+
+"red bicolor 2" image_size * 0.25 with img
+  "body"
+  "red"
+  "bicolor"
+  "wing 2"
+;
+
+"red bicolor 3" image_size * 0.25 with img
+  "body"
+  "red"
+  "bicolor"
+  "wing 3"
+;
+
+"red bicolor 2 1" image_size * 0.25 with img
+  "body"
+  "red"
+  "tricolor"
+  "wing 1"
+;
+
+"red bicolor 2 2" image_size * 0.25 with img
+  "body"
+  "red"
+  "tricolor"
+  "wing 2"
+;
+
+"red bicolor 2 3" image_size * 0.25 with img
+  "body"
+  "red"
+  "tricolor"
+  "wing 3"
+;
+
+"red tricolor 1" image_size * 0.25 with img
+  "body"
+  "red"
+  "bicolor"
+  "tricolor"
+  "wing 1"
+;
+
+"red tricolor 2" image_size * 0.25 with img
+  "body"
+  "red"
+  "bicolor"
+  "tricolor"
+  "wing 2"
+;
+
+"red tricolor 3" image_size * 0.25 with img
+  "body"
+  "red"
+  "bicolor"
+  "tricolor"
+  "wing 3"
+;

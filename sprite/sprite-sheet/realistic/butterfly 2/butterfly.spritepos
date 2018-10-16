@@ -1,0 +1,120 @@
+pattern 1: 0 0 29 24
+pattern 2: 30 0 29 24
+pattern 3: 60 0 29 24
+bicolor pattern 1: 90 0 29 24
+bicolor pattern 2: 120 0 29 24
+bicolor pattern 3: 150 0 29 24
+bicolor 2 pattern 1: 180 0 29 24
+bicolor 2 pattern 2: 210 0 29 24
+bicolor 2 pattern 3: 240 0 29 24
+tricolor pattern 1: 270 0 29 24
+tricolor pattern 2: 300 0 29 24
+tricolor pattern 3: 330 0 29 24
+monochrome 1: 360 0 29 24
+monochrome 2: 390 0 29 24
+monochrome 3: 420 0 29 24
+bicolor 1: 450 0 29 24
+bicolor 2: 480 0 29 24
+bicolor 3: 0 25 29 24
+bicolor 2 1: 30 25 29 24
+bicolor 2 2: 60 25 29 24
+bicolor 2 3: 90 25 29 24
+tricolor 1: 120 25 29 24
+tricolor 2: 150 25 29 24
+tricolor 3: 180 25 29 24
+blue pattern 1: 210 25 29 24
+blue pattern 2: 240 25 29 24
+blue pattern 3: 270 25 29 24
+blue bicolor pattern 1: 300 25 29 24
+blue bicolor pattern 2: 330 25 29 24
+blue bicolor pattern 3: 360 25 29 24
+blue bicolor 2 pattern 1: 390 25 29 24
+blue bicolor 2 pattern 2: 420 25 29 24
+blue bicolor 2 pattern 3: 450 25 29 24
+blue tricolor pattern 1: 480 25 29 24
+blue tricolor pattern 2: 0 50 29 24
+blue tricolor pattern 3: 30 50 29 24
+blue monochrome 1: 60 50 29 24
+blue monochrome 2: 90 50 29 24
+blue monochrome 3: 120 50 29 24
+blue bicolor 1: 150 50 29 24
+blue bicolor 2: 180 50 29 24
+blue bicolor 3: 210 50 29 24
+blue bicolor 2 1: 240 50 29 24
+blue bicolor 2 2: 270 50 29 24
+blue bicolor 2 3: 300 50 29 24
+blue tricolor 1: 330 50 29 24
+blue tricolor 2: 360 50 29 24
+blue tricolor 3: 390 50 29 24
+yellow pattern 1: 420 50 29 24
+yellow pattern 2: 450 50 29 24
+yellow pattern 3: 480 50 29 24
+yellow bicolor pattern 1: 0 75 29 24
+yellow bicolor pattern 2: 30 75 29 24
+yellow bicolor pattern 3: 60 75 29 24
+yellow bicolor 2 pattern 1: 90 75 29 24
+yellow bicolor 2 pattern 2: 120 75 29 24
+yellow bicolor 2 pattern 3: 150 75 29 24
+yellow tricolor pattern 1: 180 75 29 24
+yellow tricolor pattern 2: 210 75 29 24
+yellow tricolor pattern 3: 240 75 29 24
+yellow monochrome 1: 270 75 29 24
+yellow monochrome 2: 300 75 29 24
+yellow monochrome 3: 330 75 29 24
+yellow bicolor 1: 360 75 29 24
+yellow bicolor 2: 390 75 29 24
+yellow bicolor 3: 420 75 29 24
+yellow bicolor 2 1: 450 75 29 24
+yellow bicolor 2 2: 480 75 29 24
+yellow bicolor 2 3: 0 100 29 24
+yellow tricolor 1: 30 100 29 24
+yellow tricolor 2: 60 100 29 24
+yellow tricolor 3: 90 100 29 24
+green pattern 1: 120 100 29 24
+green pattern 2: 150 100 29 24
+green pattern 3: 180 100 29 24
+green bicolor pattern 1: 210 100 29 24
+green bicolor pattern 2: 240 100 29 24
+green bicolor pattern 3: 270 100 29 24
+green bicolor 2 pattern 1: 300 100 29 24
+green bicolor 2 pattern 2: 330 100 29 24
+green bicolor 2 pattern 3: 360 100 29 24
+green tricolor pattern 1: 390 100 29 24
+green tricolor pattern 2: 420 100 29 24
+green tricolor pattern 3: 450 100 29 24
+green monochrome 1: 480 100 29 24
+green monochrome 2: 0 125 29 24
+green monochrome 3: 30 125 29 24
+green bicolor 1: 60 125 29 24
+green bicolor 2: 90 125 29 24
+green bicolor 3: 120 125 29 24
+green bicolor 2 1: 150 125 29 24
+green bicolor 2 2: 180 125 29 24
+green bicolor 2 3: 210 125 29 24
+green tricolor 1: 240 125 29 24
+green tricolor 2: 270 125 29 24
+green tricolor 3: 300 125 29 24
+red pattern 1: 330 125 29 24
+red pattern 2: 360 125 29 24
+red pattern 3: 390 125 29 24
+red bicolor pattern 1: 420 125 29 24
+red bicolor pattern 2: 450 125 29 24
+red bicolor pattern 3: 480 125 29 24
+red bicolor 2 pattern 1: 0 150 29 24
+red bicolor 2 pattern 2: 30 150 29 24
+red bicolor 2 pattern 3: 60 150 29 24
+red tricolor pattern 1: 90 150 29 24
+red tricolor pattern 2: 120 150 29 24
+red tricolor pattern 3: 150 150 29 24
+red monochrome 1: 180 150 29 24
+red monochrome 2: 210 150 29 24
+red monochrome 3: 240 150 29 24
+red bicolor 1: 270 150 29 24
+red bicolor 2: 300 150 29 24
+red bicolor 3: 330 150 29 24
+red bicolor 2 1: 360 150 29 24
+red bicolor 2 2: 390 150 29 24
+red bicolor 2 3: 420 150 29 24
+red tricolor 1: 450 150 29 24
+red tricolor 2: 480 150 29 24
+red tricolor 3: 0 175 29 24
