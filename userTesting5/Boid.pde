@@ -21,7 +21,6 @@ class Boid {
 
   boolean insideC;
   boolean atText;
-  boolean inspired;
 
   Boid(float x, float y, float size, color colorB) {
     this.acc = new PVector(0, 0);
@@ -29,7 +28,7 @@ class Boid {
     this.vel = new PVector(cos(angle), sin(angle));
     this.pos = new PVector(x, y);
 
-    this.borderOffset = 0.0;
+    this.borderOffset = 200.0;
     this.maxSpd = 4;
     this.maxForce = 0.02;
 
@@ -42,7 +41,6 @@ class Boid {
 
     this.insideC = false;
     this.atText = false;
-    this.inspired = false;
 
     this.flowX =parseInt(this.pos.x/scaleW);
     this.flowY =parseInt(this.pos.y/scaleH);
@@ -57,7 +55,6 @@ class Boid {
     if (this.insideC) {
       stopAtContour();
       this.currAniState = this.stopAniState;
-      this.inspired = true;
       //PVector regionFlow=opencv.getFlowAt(this.flowX,this.flowY);
       //println(regionFlow);
       //applyForce(regionFlow);
@@ -71,61 +68,46 @@ class Boid {
     }
 
     //textRest
-    //if (touchTexts() == 0) {
+    //if (touchTexts()) {
+    //  restText();
+    //} else {
     //  flock(boids);
-    //} else if (touchTexts() == 1) {
-    //  restText(1);
-    //} else if (touchTexts() == 2) {
-    //  restText(2);
-    //} else if (touchTexts() == 3) {
-    //  restText(3);
     //}
 
+    friction();
     update();
     borders();
     render();
   }
 
-  int touchTexts () {
-    if (this.pos.x <= textX + text1W/2 && this.pos.x >= textX - text1W/2 && 
-      this.pos.y <= text1Y + text1H/2 && this.pos.y >= text1Y - text1H/2 ) {
-      return 1;
-    } else if (this.pos.x <= textX + text2W/2 && this.pos.x >= textX - text2W/2 && 
-      this.pos.y <= text2Y + text2H/2 && this.pos.y >= text2Y - text2H/2 ) {
-      return 2;
-    } else if (this.pos.x <= textX + text3W/2 && this.pos.x >= textX - text3W/2 && 
-      this.pos.y <= text3Y + text3H/2 && this.pos.y >= text3Y - text3H/2 ) {
-      return 3;
-    } else {
-      return 0;
-    }
-  }
+  //boolean touchTexts () {
+  //  if (this.pos.x <= textX + text1W/2 && this.pos.x >= textX - text1W/2 && 
+  //    this.pos.y <= text1Y + 10 && this.pos.y >= text1Y - 10) {
+  //    return true;
+  //  } else {
+  //    return false;
+  //  }
+  //}
 
-  void restText(int textID) {
-    if (random(10) < 9.9) {
-      this.atText = true;
-      this.currAniState = this.stopAniState;
-      this.vel.mult(0);
-    } else {
-      this.atText = false;
-      this.currAniState = 0;
-      leaveText(textID);
-    }
-  }
+  //void restText() {
+  //  if (random(10) < 5) {
+  //    this.atText = true;
+  //    this.currAniState = this.stopAniState;
+  //    this.vel.mult(0);
+  //  } else {
+  //    this.atText = false;
+  //    this.currAniState = 0;
+  //    leaveText();
+  //  }
+  //}
 
-  void leaveText(int textID) {
-    PVector centerPos = new PVector(0, 0);
-    if (textID == 1) {
-      centerPos = new PVector(textX, text1Y);
-    } else if (textID == 2) {
-      centerPos = new PVector(textX, text2Y);
-    } else if (textID == 3) {
-      centerPos = new PVector(textX, text3Y);
-    }
-    this.flyAcc =  centerPos.sub(this.pos);
-    this.flyAcc.mult(-0.03);
-    applyForce(this.flyAcc);
-  }
+  //void leaveText() {
+  //  PVector centerPos = new PVector(0, 0);
+  //  centerPos = new PVector(textX, text1Y);
+  //  this.flyAcc =  centerPos.sub(this.pos);
+  //  this.flyAcc.mult(-0.03);
+  //  applyForce(this.flyAcc);
+  //}
 
   void stopAtContour() {
     this.vel = new PVector(0, 0);
@@ -147,9 +129,9 @@ class Boid {
     PVector sep = separate(boids);
     PVector ali = align(boids);
     PVector coh = cohesion(boids);
-    sep.mult(1.5);
+    sep.mult(3.5);
     ali.mult(1.0);
-    coh.mult(1.0);
+    coh.mult(0.5);
     applyForce(sep);
     applyForce(ali);
     applyForce(coh);
@@ -166,7 +148,7 @@ class Boid {
     PVector desired = PVector.sub(target, this.pos);  // A vector pointing from the this.pos to the target
     // Scale to maximum speed
     float magnitude=desired.mag();
-    magnitude=map(magnitude,0,width/2,this.maxSpd,0);
+    magnitude=map(magnitude, 0, width/2, this.maxSpd, 0);
     desired.normalize();
     desired.mult(magnitude);
 
@@ -180,21 +162,23 @@ class Boid {
     applyForce(steer);
   }
 
-  void repel(PVector force,PVector target) {
-    PVector desired = PVector.sub(this.pos,target);  // A vector pointing from the this.pos to the target
-    // Scale to maximum speed
-    float magnitude=desired.mag();
-    //magnitude=map(magnitude,0,width/2,this.maxSpd,0)*force.mag();
-    //desired.normalize();
-    //desired.mult(magnitude);
+  void repelTxt(PVector target) {
+    PVector force = PVector.sub(this.pos, target);   // Calculate direction of force
+    float d = force.mag(); 
+    d = constrain(d, 0.01, 20.0);                        // Limiting the distance to eliminate "extreme" results for very close or very far objects
+    force.normalize();                                  // Normalize vector (distance doesn't matter here, we just want this vector for direction)
+    float strength = (9.8 * this.size) / (d * d);      // Calculate gravitional force magnitude
+    force.mult(strength*100);
+    applyForce(force);
+  }
 
-    // Above two lines of code below could be condensed with new PVector setMag() method
-    // Not using this method until Processing.js catches up
-    // desired.setMag(this.maxSpd);
-
-    // Steering = Desired minus this.this.vel
-    PVector steer = PVector.sub(desired, this.vel);
-    steer.limit(this.maxForce*30);  // Limit to maximum steering force
+  void repel(float distance, PVector target) {
+    PVector force = PVector.sub(this.pos, target);   // Calculate direction of force
+    float d = force.mag(); 
+    d = constrain(d, 0.01, 20.0);                        // Limiting the distance to eliminate "extreme" results for very close or very far objects
+    force.normalize();                                  // Normalize vector (distance doesn't matter here, we just want this vector for direction)
+    float strength = (9.8 * this.size) / (d * d);      // Calculate gravitional force magnitude
+    force.mult(strength*500);
     applyForce(force);
   }
 
@@ -218,18 +202,12 @@ class Boid {
 
   void checkAniState(boolean atText, boolean inContour) {
     color displayClr = this.plainClr;
-    // inContour not atText, display oriClr
-    if (inContour && !atText) {
+    if (atText) {
+      displayClr = this.plainClr;
+    }
+    if (inContour) {
       displayClr = this.oriClr;
     } 
-    if (atText && !inContour) {
-      // if not inspired, atText display plainClr
-      if (this.inspired) {
-        displayClr = this.oriClr;
-      } else {
-        displayClr = this.plainClr;
-      }
-    }
 
     if (this.currAniState == 1) {
       //insideC
@@ -242,12 +220,7 @@ class Boid {
       butterfly.displayHidden(0, 0, this.size, this.plainClr);
       butterflyL.displayHidden(0, 0, this.size, this.oriClr);
     } else {
-      if (this.inspired) {
-        butterfly.display(0, 0, this.size, this.oriClr);
-      } else {
-        butterfly.display(0, 0, this.size, this.plainClr);
-      }
-
+      butterfly.display(0, 0, this.size, this.plainClr);
       butterflyL.displayHidden(0, 0, this.size, this.oriClr);
       butterflyR.displayHidden(0, 0, this.size, this.oriClr);
     }
@@ -256,8 +229,14 @@ class Boid {
   void render() {
     // Draw a triangle rotated in the direction of this.this.vel
     // theta is modified to make butterflies fly in a more realistic way
-    float theta = this.vel.heading() + PI/2;
-    //theta = map(theta, -PI, PI, PI/2, -PI/2);
+    float theta = PI/2.0 - this.vel.heading();
+    ////println(theta);
+    if (theta > PI/2.0 && theta < PI) {
+      theta = map(theta, PI/2.0, PI, 0, PI/2.0);
+    } else if (theta > PI && theta < 3/2.0*PI) {
+      theta = map(theta, PI, 3/2.0*PI, 3/2.0*PI, TWO_PI);
+    }
+
     // heading2D() above is now heading() but leaving old syntax until Processing.js catches up
 
     fill(200, 100);
@@ -281,19 +260,22 @@ class Boid {
   void borders() {
     if (this.pos.x < -this.borderOffset) {
       this.pos.x = width+this.borderOffset;
-      this.inspired = false;
     }
     if (this.pos.y < -this.borderOffset) {
       this.pos.y = height+this.borderOffset;
-      this.inspired = false;
     }
     if (this.pos.x > width+this.borderOffset) {
       this.pos.x = -this.borderOffset;
-      this.inspired = false;
     }
     if (this.pos.y > height+this.borderOffset) {
       this.pos.y = -this.borderOffset;
-      this.inspired = false;
+    }
+  }
+  // Friction
+  void friction() {
+    if (this.vel.mag()>5) {
+      PVector force = this.vel.copy().mult(-0.5);
+      applyForce(force);
     }
   }
 
