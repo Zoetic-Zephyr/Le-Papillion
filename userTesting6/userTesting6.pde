@@ -32,16 +32,8 @@ Animation butterfly;
 Animation butterflyL;
 Animation butterflyR;
 
-int textX = 1280/2-25;
-int text1W = 290;
-int text1H = 50;
-int text1Y = 215;
-int text2W = 170;
-int text2H = 50;
-int text2Y = 280;
-int text3W = 180;
-int text3H = 50;
-int text3Y = 355;
+PVector txtPos = new PVector(1280/2.0-25, 275);
+
 PImage borderMask;
 
 int blobSizeThreshold = 40;
@@ -96,7 +88,6 @@ void setup() {
   //  .setValue(3104)
   //  ;
 
-  float frameOfst = 0.1;
   borderMask = loadImage("borderMask.png");
   flock = new Flock();
   butterfly = new Animation("fly_", 40);
@@ -106,15 +97,7 @@ void setup() {
   for (int i = 0; i < 41; i++) {
     color clr = color(random(100, 255), random(100, 255), random(100, 255), 255);
     // possible change here regarding butterfly initial position
-    if (random(1)<0.25) {
-      flock.addBoid(new Boid(random(-width*(frameOfst), 0), random(0, height), random(0.5, 1.3), clr));
-    } else if (random(1)<0.5) {
-      flock.addBoid(new Boid(random(width, width*(1+frameOfst)), random(0, height), random(0.5, 1.3), clr));
-    } else if (random(1)<0.75) {
-      flock.addBoid(new Boid(random(0, width), random(-height*(frameOfst), 0), random(0.5, 1.3), clr));
-    } else {
-      flock.addBoid(new Boid(random(0, width), random(height, height*(1+frameOfst)), random(0.5, 1.3), clr));
-    }
+    flock.addBoid(new Boid(random(0, width), random(0, height), random(0.8, 1.5), clr));
   }
 
   //setup scale between screen and depthImg
@@ -126,8 +109,10 @@ void draw() {
   background(255);
   rectMode(CENTER);
 
-  //draw depthImg
-  int[] rawDepth = kinect2.getRawDepth();
+  addTxtRepeller(txtPos);
+
+    //draw depthImg
+    int[] rawDepth = kinect2.getRawDepth();
   depthImg.loadPixels();
   for (int i=0; i < rawDepth.length; i++) {
     int depth = rawDepth[i];
@@ -168,12 +153,10 @@ void draw() {
     PVector currentPos=b.getCenter();
     PVector prevPos = b.getPrevCenter();
     float d = dist(currentPos.x, currentPos.y, prevPos.x, prevPos.y);
-    PVector force = currentPos.copy().sub(prevPos);
-    force.mult(-.08);
-    if (d<7) {
+    if (d < 6) {
       //addContourAttractor(currentPos);
     } else {
-      addContourRepeller(force, currentPos);
+      addContourRepeller(d, currentPos);
     }
     b.updatePrevCenter();
   }
@@ -238,9 +221,8 @@ void draw() {
   //map text
   //stroke(0);
   //strokeWeight(2);
-  //rect(textX, text1Y, text1W, text1H);
-  //rect(textX, text2Y, text2W, text2H);
-  //rect(textX, text3Y, text3W, text3H);
+  //line(textX - text1W/2, text1Y, textX + text1W/2, text1Y);
+  //ellipse(txtPos.x, txtPos.y, 100, 100);
 }
 
 boolean inContour(int x, int y, Contour c) {
@@ -250,22 +232,33 @@ boolean inContour(int x, int y, Contour c) {
   return r == 1;
 }
 
-void addContourAttractor(PVector target) {
-  ArrayList<Boid> tmpBoids =flock.getBoids();
-  for (int i = 0; i < tmpBoids.size(); i++) {
-    Boid b =tmpBoids.get(i);
-    b.attract(target);
-  }
-}
+//void addContourAttractor(PVector target) {
+//  ArrayList<Boid> tmpBoids =flock.getBoids();
+//  for (int i = 0; i < tmpBoids.size(); i++) {
+//    Boid b =tmpBoids.get(i);
+//    b.attract(target);
+//  }
+//}
 
-void addContourRepeller(PVector force, PVector target) {
+void addTxtRepeller(PVector target) {
   ArrayList<Boid> tmpBoids =flock.getBoids();
   for (int i = 0; i < tmpBoids.size(); i++) {
     Boid b =tmpBoids.get(i);
     PVector dist = target.copy();
     dist.sub(b.pos);
-    if (dist.mag()<200)
-      b.repel(force, target);
+    if (dist.mag()<120)
+      b.repelTxt(target);
+  }
+}
+
+void addContourRepeller(float d, PVector target) {
+  ArrayList<Boid> tmpBoids =flock.getBoids();
+  for (int i = 0; i < tmpBoids.size(); i++) {
+    Boid b =tmpBoids.get(i);
+    PVector dist = target.copy();
+    dist.sub(b.pos);
+    if (dist.mag()<250)
+      b.repel(d, target);
   }
 }
 
